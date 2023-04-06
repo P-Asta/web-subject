@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+}
+header{
+    padding: 20px;
+    box-shadow: 0 0 10px #eee;
+    margin-bottom: 100px;
+}
+.right{
+    float: right;
+}
+
+aside{
+    background-color: #eee;
+    width: 200px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+article{
+    background-color: #eee;
+    width: 500px;
+    padding: 50px;
+}
+section{
+    margin: 10px 0;
+    background-color: #ddd;
+}
