@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <!-- 
+            required: 필수값
+            autofocus: 세로고침시 focus상태가됨
+            placeholder: 미리보기(?) 를 만듬
+        -->
+
+        <h3>이름</h3>
+        <input type="text" name="name" required placeholder="홍길동" autofocus>
+        
+        <h3>학번</h3>
+        <input type="number" name="num" required placeholder="106XX">
+        
+        <h3>좋아하는색</h3>
+        <input type="color" name="color" required>
+        
+        <!-- 
+            min: 최소값
+            max: 최대값
+        -->
+        <h3>키</h3>
+        <input type="number" name="ki" required min="0" max="100" value="0">
+        
+        <h3 id="n">좋아하는 숫자를 입력하세요: 0</h3>
+        <input type="range" name="fav_color" min="0" max="10000" value="0">
+        
+        <h3>전화번호</h3>
+        <input type="text" pattern="/010(\-?)([0-9]{4})(\-?)([0-9]{4})/gim" required>
+
+        <h3>점심</h3>
+        
+        <select>
+            <option>a</option>
+            <option>s</option>
+            <option>d</option>
+            <option>f</option>
+        </select>
+        
+        <h3>프로그래밍 언어</h3>
+
+        <!-- 
+            input의 list는 datalist의 id와 같을때 datalist > option을 불러옴
+        -->
+        
+        <input list="lang">
+        <datalist id="lang">
+            <option value="Rust"></option>
+            <option value="Go"></option>
+            <option value="Java"></option>
+            <option value="Kotlin"></option>
+            <option value="Python"></option>
+            <option value="C/C++"></option>
+        </datalist>
+        
+        <br/>
+        <br/>
+        <input type="submit">
+    </form>
+</body>
+</html>
+
+<script>
+    function ani(){
+        document.getElementById("n").innerHTML = `좋아하는 숫자를 입력하세요: ${document.getElementsByName("fav_color")[0].value}`
+        requestAnimationFrame(ani)
+    }
+    ani()
+</script>
