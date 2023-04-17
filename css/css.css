@@ -1,0 +1,55 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+*{
+    font-family: 'Pretendard';
+    margin: 0;
+}
+body{
+    background-color: #eee;
+}
+header{
+    background-color: #3366ff;
+    color: #fff;
+    text-align: center;
+    padding: 100px;
+    font-size: 80px;
+    font-weight: 700;
+}
+main{
+    display: flex;
+    gap: 50px;
+    margin: 80px;
+    flex-wrap: wrap;
+}
+article{
+    border-radius: 15px;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    height: 100px;
+    flex-grow: 1;
+    color: #bbb;
+    transition: all .5s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0, 1.61);
+    cursor: pointer;
+    min-width: 300px;
+}
+article:hover{
+    transform: scale(1.1);
+}
+article#rs{
+    background-image: url("https://rustacean.net/assets/rustacean-orig-noshadow.svg");
+    background-size: 0;
+    background-repeat: no-repeat;
+    background-position: 70px 50%;
+}
+
+article#html:hover {    color: rgb(255, 72, 0)   }
+article#css:hover  {    color: rgb(0, 132, 255)   }
+article#js:hover   {    color: rgb(0, 255, 149)   }
+article#rs:hover   {    color: rgb(255, 166, 0);background-size: 70px;   }
+footer b{
+    background-color: #3366ff;
+    color: #fff;
+}
