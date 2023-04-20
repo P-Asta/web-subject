@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        header>ul>li
+     -->
+    <header>
+        <ul>
+            <li></li>
+        </ul>
+    </header>
+    
+    <!-- div>a+b -->
+    <div>
+        <a href=""></a>
+        <b></b>
+    </div>
+
+    <!-- header>ul>li*10 -->
+    <header>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </header>
+
+    <!-- h1#one -->
+    <h1 id="one"></h1>
+
+    <!-- h1.one -->
+    <h1 class="one"></h1>
+
+
+    <!-- article>(section#one>div)+(section#two>div) -->
+    <article>
+        <section id="one">
+            <div></div>
+        </section>
+        <section id="two">
+            <div></div>
+        </section>
+    </article>
+
+    <ul>
+        <!-- li[attr="aaa"]*10 -->
+
+        <li attr="aaa"></li>
+        <li attr="aaa"></li>
+        <li attr="aaa"></li>
+        <li attr="aaa"></li>
+        <li attr="aaa"></li>
+        <li attr="aaa"></li>
+        <li attr="aaa"></li>
+        <li attr="aaa"></li>
+        <li attr="aaa"></li>
+        <li attr="aaa"></li>
+    </ul>
+
+    <!-- ul>li{hi}*10 -->
+    <ul>
+        <li>hi</li>
+        <li>hi</li>
+        <li>hi</li>
+        <li>hi</li>
+        <li>hi</li>
+        <li>hi</li>
+        <li>hi</li>
+        <li>hi</li>
+        <li>hi</li>
+        <li>hi</li>
+    </ul>
+
+    <!-- ul>h$*6{$} -->
+    <ul>
+        <h1>1</h1>
+        <h2>2</h2>
+        <h3>3</h3>
+        <h4>4</h4>
+        <h5>5</h5>
+        <h6>6</h6>
+    </ul>
+
+    
+    <div>
+        <h1>웹프</h1>
+        <div>html 학습하기</div>
+        <div>css 학습하기</div>
+        <div>js 학습하기</div>
+    </div>
+    
+</body>
+</html>
+<style>
+    div > h1{
+        color: #3366ff
+    }
+    div > div{
+        color: #86a4ff
+    }
+    div > div:hover{
+        background-color: #3366ff;
+        color: #fff;
+    }
+</style>
