@@ -1,0 +1,119 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+*{
+    font-family: 'pretendard';
+    margin: 0;
+}
+
+body{
+    background-image: url("../img/dot.svg");
+    background-size: 40px;
+}
+
+header{
+    background-color: #5b7de4;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+}
+
+header > b{
+    margin-left: 30px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+nav{
+    margin-right: 30px;
+    align-items: center;
+    float: right;
+    display: flex;
+    gap: 20px;
+}
+a{
+    margin-top: 6px;
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #ddd
+}
+
+main{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 110px 50px;
+}
+
+article{
+    flex-grow: 1;
+    max-width: 400px;
+    min-width: 300px;
+    height: 400px;
+    background-color: #eee;
+    border-radius: 15px;
+}
+
+#navmob{
+    top: 60px;
+    display: none;
+    position: fixed;
+    background-color: #18181886;
+    width: 100%;
+    height: 1000px;
+    z-index: 10;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+}
+
+#navmob > a{
+    display: block;
+    height: 20px;
+}
+
+label[for="navbar"]{
+    cursor: pointer;
+    margin-right: 30px;
+    display: none;
+    flex-direction: column;
+    float: right;
+    margin-top: 3px;
+}
+
+label[for="navbar"] > p{
+    background-color: rgb(255, 255, 255);
+    width: 30px;
+    height: 5px;
+    margin-top: 3px;
+    transition: .5s all;
+}
+#navbar:checked ~ label[for="navbar"] > p:nth-child(1){
+    transform: rotate(-45deg) translateY(11px);
+}
+#navbar:checked ~ label[for="navbar"] > p:nth-child(2){
+    opacity: 0;
+}
+#navbar:checked ~ label[for="navbar"] > p:nth-child(3){
+    transform: rotate(45deg) translateY(-11px);
+}
+
+#navbar{
+    display: none;
+}
+#navbar:checked ~ #navmob{
+    display: flex;
+}
+
+
+@media (max-width: 480px){
+    nav{
+        display: none;
+    }
+    label[for="navbar"]{
+        display: block;
+    }
+}
