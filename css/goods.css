@@ -1,0 +1,18 @@
+input{
+    margin-top: 20px;
+}
+
+label{
+    position: absolute;
+    left: 10px;
+    transform: translateY(20px);
+    font-size: 15px;
+    padding-left: 3px;
+    color: #ddd;
+    transition: all .2s;
+}
+
+input#name:valid ~ label[for="name"]{
+    transform: translateY(0px);
+    color: #000;
+}
