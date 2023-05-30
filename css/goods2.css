@@ -1,0 +1,69 @@
+*{
+    --main: #73C4FE
+}
+input{
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    border: 0;
+    outline: 1px solid #898989;
+    padding: 5px 20px;
+}
+
+form{
+    --up: -65px;
+    --org: -32px;
+}
+
+input:focus{
+    border: 0;
+    outline: 2px var(--main) solid;
+}
+
+label{
+    transition: all .2s;
+    position: absolute;
+    
+    transform: translateY(var(--org)) translateX(20px);
+    color: #898989;
+    z-index: 10;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+input[type="submit"]{
+    background-color: var(--main);
+    color: #fff;
+    outline: 0;
+    width: auto;
+    height: auto;
+    
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all .5s;
+    transition-timing-function: cubic-bezier(0.11, 0.65, 0.12, 2);
+}
+
+input[type="submit"]:hover{
+    transform: scale(.99);
+}
+
+input[type="submit"]:focus{
+    transform: scale(.95);
+    filter: brightness(.9)
+}
+
+#email:valid ~ label[for=email]{ transform: scale(.8) translateY(var(--up)) translateX(20px); }
+#email:focus ~ label[for=email]{ transform: scale(.8) translateY(var(--up)) translateX(20px); }
+
+
+#id:valid ~ label[for=id]{ transform: scale(.8) translateY(var(--up)) translateX(20px); }
+#id:focus ~ label[for=id]{ transform: scale(.8) translateY(var(--up)) translateX(20px); }
+
+
+#review{
+    padding: 10px 20px 100px 20px;
+}
+
+#review:valid ~ label[for=review]{ transform: scale(.8) translateY(var(--up)) translateX(20px); }
+#review:focus ~ label[for=review]{ transform: scale(.8) translateY(var(--up)) translateX(20px); }
