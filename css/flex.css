@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+}
+#cont{
+    display: flex;
+    background-color: #eee;
+    gap: 50px;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    margin-bottom: 2000px;
+    > div{
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 5vh;
+        width: 100px;
+        height: 100px;
+        color: #fff;
+
+        &:nth-child(1){
+            background-color: red;
+        }
+        &:nth-child(2){
+            flex-grow: 10;
+            background-color: orange;
+        }
+        &:nth-child(3){
+            flex-grow: 10;
+            background-color: yellow;
+            color: #aaa;
+        }
+        &:nth-child(4){
+            background-color: green;
+        }
+    }
+}
