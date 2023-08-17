@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img id="light" onmouseenter="this.style.width='500px'" src="../img/light/0.png"> this를 쓰면 자기자신을 가르킴 -->
+    <img id="light" src="../img/light/0.png">
+    <input type="button" id="switch" value="switch">
+</body>
+</html>
+
+
+<script>
+
+let isOn = 1;
+let light = document.getElementById("light"); 
+let sw = document.getElementById("switch");
+let pushSwitch = function() {isOn = !isOn; document.getElementById("light").src = `../img/light/${Number(isOn)}.png`}
+
+light.addEventListener("mouseleave", function() { light.style.width="230px" });
+light.addEventListener("mouseenter", function() { light.style.width="500px" });
+
+pushSwitch();
+sw.addEventListener("click", pushSwitch)
+
+</script>
