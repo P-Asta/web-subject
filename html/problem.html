@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>버튼을 누르면 문제가 출력됩니다.</h1>
+    <h1 id="int">더하기 결과</h1>
+    <h1 id="str">이름</h1>
+    
+    <input type="button" id="viewSum" value="더하기값 출력">
+    <input type="button" id="viewStr" value="문자입력결과 출력">
+
+    <div>
+        <input type="text" placeholder="a" id="a"> 
+    
+        <select id="expr">
+            <option value="+"> + </option>
+            <option value="-"> - </option>
+            <option value="*"> × </option>
+            <option value="/"> ÷ </option>
+        </select>
+
+        <input type="text" placeholder="b" id="b"> = <b id="rmx"></b>
+    </div>
+
+</body>
+</html>
+
+<script>
+    // let a = prompt(`숫자1 입력`)
+    // let b = prompt(`숫자2 입력`)
+    // let name = prompt(`이름 입력`)
+    document.getElementById("viewSum").addEventListener("click", () => {
+        document.getElementById("int").innerHTML = Number(a) + Number(b)
+    })
+    
+    document.getElementById("viewStr").addEventListener("click", () => {
+        document.getElementById("str").innerHTML = name
+    })
+    const loop = () => {
+        document.getElementById("rmx").innerHTML = eval(`${Number(document.getElementById("a").value)} ${document.getElementById("expr").value} ${Number(document.getElementById("b").value)}`)
+        requestAnimationFrame(loop)
+    }
+    loop()
+</script>
