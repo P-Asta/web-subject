@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="msg"></h1>
+    <h6 id="now"></h6>
+    <div id="moon"></div>
+    <div id="sun"></div>
+</body>
+</html>
+
+<script>
+    // let sec = 0;
+    const R = 800
+    const loop = () => {
+        let time = new Date();
+        let sec = time.getSeconds()/10;
+        // sec += 0.5;
+        if (time.getSeconds() >= 14 && time.getSeconds() <= 50){
+            document.body.style.backgroundColor="#181818"
+            document.body.style.color="#fff"
+        }else {
+            document.body.style.backgroundColor="#fff"
+            document.body.style.color="#181818"
+        }
+        document.getElementById("now").innerHTML = time;
+        document.getElementById("msg").innerHTML = time.getHours()<12 ? "Good Moning": "Good Afternoon";
+        document.getElementById("moon").style.transform=`translateX(${Math.sin(sec)*R}px) translateY(${Math.cos(sec)*R}px)`
+        document.getElementById("sun").style.transform=`translateX(${-Math.sin(sec)*R}px) translateY(${-Math.cos(sec)*R}px)`
+        requestAnimationFrame(loop)
+    }
+    loop()
+
+</script>
+
+<style>
+    body{
+        transition: all .5s;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    #moon{
+        position: absolute;
+        left: 45%;
+        bottom: 0;
+        background-color: rgb(255, 187, 0);
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        transition: all .5s;
+    }
+    
+    #sun{
+        position: absolute;
+        left: 45%;
+        bottom: 0;
+        background-color: rgb(255, 0, 0);
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        transition: all .5s;
+    }
+</style>
