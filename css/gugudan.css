@@ -1,0 +1,23 @@
+main{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #000;
+    /* outline: red 10px solid; */
+    /* flex-direction: column; */
+    > .gugu{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        > b{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            
+            border: 1px solid #ddd;
+        }
+    }
+}

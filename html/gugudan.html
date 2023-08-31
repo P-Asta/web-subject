@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/gugudan.css">
+</head>
+<body>
+    <main></main>
+</body>
+</html>
+
+<script>
+    for (i = 1; i <= 9; i++){
+        document.querySelector("main").innerHTML += `<article class="gugu" id="${i}dan"><article>`
+        
+        for (j = 1; j <= 9; j++){
+            document.getElementById(`${i}dan`).innerHTML += `<b>${i*j}</b>`
+        }
+    }
+</script>
