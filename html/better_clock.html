@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+</head>
+<body>
+    <div id="clock">
+        <div class="text" style="--pos: 30deg">1</div>
+        <div class="text" style="--pos: 60deg">2</div>
+        <div class="text" style="--pos: 90deg">3</div>
+        <div class="text" style="--pos: 120deg">4</div>
+        <div class="text" style="--pos: 150deg">5</div>
+        <div class="text" style="--pos: 180deg">6</div>
+        <div class="text" style="--pos: 210deg">7</div>
+        <div class="text" style="--pos: 240deg">8</div>
+        <div class="text" style="--pos: 270deg">9</div>
+        <div class="text" style="--pos: 300deg">10</div>
+        <div class="text" style="--pos: 330deg">11</div>
+        <div class="text" style="--pos: 0deg">12</div>
+        <img id="sec" src="../img/clock/sec.svg">
+        <img id="min" src="../img/clock/min.svg">
+        <img id="hour" src="../img/clock/hour.svg">
+    </div>
+</body>
+</html>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div#clock{
+        --ml: 100px;
+        --mt: 100px;
+        margin-left: var(--ml);
+        margin-top: var(--mt);
+        width: 500px;
+        height: 500px;
+        background-color: #eee;
+        border-radius: 100%;
+        /* position: calc(cos); */
+        > div.text{
+            
+            margin-left: var(--ml);
+            margin-top: var(--mt);
+            position: absolute;
+            font-size: 30px;
+            font-weight: 900;
+            top:  calc(cos(var(--pos)) * -230px + 230px);
+            left: calc(sin(var(--pos)) * 230px + 241px);
+        }
+        > img{
+            margin-left: var(--ml);
+            margin-top: var(--mt);
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+</style>
+<script>
+    const loop = () => {
+        sec = new Date().getSeconds();
+        min = new Date().getMinutes();
+        hour = new Date().getHours();
+        console.log(sec)
+
+        document.getElementById("sec").style.transform = `rotate(${sec*6}deg)`
+        document.getElementById("min").style.transform = `rotate(${(min+sec/60)*6}deg)`
+        document.getElementById("hour").style.transform = `rotate(${(hour+(min+sec/60)/60 )*30}deg)`
+        setTimeout(loop, 1000)
+    }
+    loop();
+</script>
