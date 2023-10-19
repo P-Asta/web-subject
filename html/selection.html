@@ -6,15 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <script>
+        function a(){
+            let r = Number(document.getElementById("r").value);
+            let res = r * r * Math.PI
+            console.log(res)
+            if (!document.querySelector("input[name=ra]").checked){
+                res *= 4
+            }
+            document.querySelector("i").innerHTML = res
+        }
+    </script>
 </head>
 <body>
     <select>
-        <option value="a">a</option>
+        <option value="a" selected>a</option>
         <option value="s">s</option>
         <option value="d">d</option>
         <option value="f">f</option>
     </select>
     <input type="button" value="just button" onclick='document.querySelector("b").innerHTML = document.querySelector("select").value'>
     <b></b>
+
+    <br>
+    <input id="r">
+    <input type="radio" name="ra" id="ra-a"> <label for="ra-a">구</label>
+    <input type="radio" name="ra" id="ra-b"> <label for="ra-b">원</label>
+    <input type="button" value="just button" onclick='a()'>
+    <i></i>
 </body>
 </html>
