@@ -1,0 +1,23 @@
+<input id="calc1"></input>
+<select id="calc2">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<input id="calc3"></input>
+ = 
+
+<script>
+    /**
+     * @type {HTMLElement}
+     * */
+    let node = document.createElement("b");
+    node.id = "res"
+    document.body.appendChild(node)
+  const loop = () => {
+    document.getElementById("res").innerHTML = eval(Number(document.getElementById("calc1").value) + document.getElementById("calc2").value + Number(document.getElementById("calc3").value));
+    requestAnimationFrame(loop);
+  }
+  loop()
+</script>
