@@ -43,7 +43,7 @@
     const dice = document.getElementById("dice");
     function roll() {
         setTimeout(() => {
-            let i = Math.floor(Math.random()*6)
+            let i = Math.floor(Math.random()*6) + 1
             dice.innerHTML = i;
         }, 150)
         dice.setAttribute("rotate", Number(document.getElementById("dice").getAttribute("rotate")) + 360*5)
