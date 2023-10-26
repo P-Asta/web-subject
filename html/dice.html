@@ -3,21 +3,28 @@
 <head>
     <title>주사위 굴리기</title>
     <style>
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+        @font-face {
+            font-family: 'Dice';
+            src: url('../ttf/Dice.ttf');
+        }
+
+/* @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css"); */
         * {
-            font-family: "Pretendard";
             text-align: center;
         }
         #dice {
-            display: flex;
+            font-family: "Dice";
+            /* display: flex;
             align-items: center;
-            justify-content: center;
-            height: 100px;
-            width: 100px;
+            justify-content: center; */
+            height: 95px;
+            width: 95px;
+            padding-left: 5.5px;
+            padding-top: 3.5px;
             margin: 10px auto;
             border-radius: 8px;
-            background-color: #3366ff;
-            color: #fff;
+            background-color: #fff;
+            color: #3366ff;
             font-size: 100px;
             cursor: pointer;
         }
