@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>주사위 굴리기</title>
+    <style>
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+        * {
+            font-family: "Pretendard";
+            text-align: center;
+        }
+        #dice {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100px;
+            width: 100px;
+            margin: 10px auto;
+            border-radius: 8px;
+            background-color: #3366ff;
+            color: #fff;
+            font-size: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>주사위 굴리기 게임입니다.</h3>
+    <p id="dice" rotate="0" onclick="roll()"> ? </p>
+</body>
+
+</html>
+
+
+<script>
+    const dice = document.getElementById("dice");
+    function roll() {
+        setTimeout(() => {
+            let i = Math.floor(Math.random()*6)
+            dice.innerHTML = i;
+        }, 150)
+        dice.setAttribute("rotate", Number(document.getElementById("dice").getAttribute("rotate")) + 360*5)
+    };
+    let rotate=0
+    loop = () => {
+        rotate -= (rotate-Number(document.getElementById("dice").getAttribute("rotate"))) / 10;
+        dice.style.transform = `rotate(${rotate}deg)`;
+        requestAnimationFrame(loop);
+    }
+    loop()
+</script>
