@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="ala"></div>
+    
+    <h1 id="pb"></h1>
+    <form action="" id="sol-box">
+        <input type="text" id="sol" placeholder="정답을 입력해주세요.">
+        <input type="submit" value="제출">
+    </form>
+
+</body>
+</html>
+
+
+<script>
+    const ala = document.getElementById("ala")
+    const pb = document.getElementById("pb")
+    const sol = document.getElementById("sol")
+    const solBox = document.getElementById("sol-box")
+    const EXPR = ["+", "-", "*", "/", "%"]
+    const genPb = () => {
+        let size = Math.floor(Math.random() * 10) + 2;
+        let making = ""
+        for (let i = 0; i < size; i++){
+            making += Math.floor(Math.random()*100);
+            if (size != i+1){
+                making += EXPR[Math.floor(Math.random()*5)]
+            }
+        }
+        pb.innerHTML = making
+        console.log(Math.floor(eval(pb.innerHTML)))
+    }
+    genPb()
+    solBox.addEventListener("submit", (e) => {
+        e.preventDefault()
+        if (Math.floor(eval(pb.innerHTML)) == Math.floor(sol.value)) {
+            ala.innerHTML = `<div style='background-color:#40a02b'>맞음</div>${ala.innerHTML}`
+            genPb()
+        }else{
+            ala.innerHTML = `<div>틀림</div>${ala.innerHTML}`
+        }
+        setTimeout(() => {
+            ala.removeChild(ala.lastElementChild)
+        }, 1000)
+    })
+</script>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 100vh;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #ala{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        top: 20px;
+        > div{
+            padding: 20px 10px;
+            border-radius: 8px;
+            width: 30vw;
+            background-color: #fe640b;
+        }
+    }
+
+    input {
+        padding: 10px 15px;
+        border: 0;
+        outline: 0;
+        border-radius: 8px;
+        &[type="text"]{
+            background-color: #eff1f5;
+            &::placeholder{
+                color: #aaa
+            }
+        }
+        &[type="submit"]{
+            background-color: #3366ff;
+            color: #fff
+        }
+    }
+</style>
