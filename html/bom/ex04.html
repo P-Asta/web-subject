@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p>숫자를 입력하시오.</p>
+    <form>
+        <input id="test" type="text"/>
+        <input type="submit" value="입력완료"/>
+    </form>
+    <script>
+        document.querySelector("form").addEventListener("submit", e => {
+            e.preventDefault()
+            
+            var n = document.getElementById("test").value;
+            
+            if (String(Number(n)) == "NaN") {
+                alert("숫자가 아닙니다.");
+            }
+
+        })</script>
+</body>
+</html>

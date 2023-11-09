@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Signal</title>
+    <style>
+    #traffic-signal{
+    border: 8px solid black;
+    padding: 10px 10px;
+    width: 50px;
+    border-radius: 50px;
+}
+#traffic-signal > div{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+#green{
+    background-color: green;
+    border-color: black;
+}
+#yellow{
+    background-color: yellow;
+    border-color: black;
+}
+#red{
+    background-color: red;
+    border-color: black;
+}
+    </style>
+</head>
+<body onload="//;">
+    <div id="traffic-signal">
+        <div id="green"></div>
+        <div id="yellow"></div>
+        <div id="red"></div>
+    </div>
+    <div id="line1"></div>
+    <div id="line2"></div>
+    <script>
+        function startTrafficSignal () {
+    var green=document.getElementById("green");
+    var red=document.getElementById("red");
+    var yellow=document.getElementById("yellow");
+ 
+    red.style.backgroundColor="white";
+    yellow.style.backgroundColor="white";
+    green.style.opacity=1    
+    green.style.backgroundColor="green"    
+
+    setTimeout(function () {
+        green.style.backgroundColor="green";
+        red.style.backgroundColor="white";
+        //
+    },5000);
+ 
+    
+    setTimeout(function () {
+        //
+        green.style.backgroundColor="white";
+        yellow.style.backgroundColor="yellow";
+    },7000);
+    
+    setTimeout(function () {
+        yellow.style.backgroundColor="white";
+        red.style.backgroundColor="red";
+        //
+    },9000);
+ 
+    setTimeout(function () {
+        //
+        red.style.backgroundColor="white";
+        yellow.style.backgroundColor="yellow";
+    },14000);
+}
+startTrafficSignal()
+var timer=setInterval(startTrafficSignal, 16000)
+ 
+//;
+    </script>
+</body>
+</html>

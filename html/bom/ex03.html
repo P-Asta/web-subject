@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                -webkit-user-drag: none;
+                -khtml-user-drag: none;
+                -moz-user-drag: none;
+                -o-user-drag: none;
+                user-select: none;
+            }
+            img{
+              position: absolute;
+            }
+            #catPic {
+              top: 10px;
+              left: 10px;
+            }
+
+            #dogPic {
+              background: blue;
+              top: 50px;
+              left: 50px;
+            }
+            body{
+              width: 100vw;
+              height: 100vh;
+              overflow: hidden;
+            }
+        </style>
+    </head>
+<body>
+
+    <img src="dog.jpg" id="dogPic">
+    <img src="cat.jpg" id="catPic">
+<script>
+var dog = document.getElementById("dogPic");
+var cat = document.getElementById("catPic");
+let entity = null;
+ox = null;
+oy = null;
+
+dog.addEventListener("mousedown", (e) => { entity = dog; ox = e.offsetX; oy = e.offsetY });
+cat.addEventListener("mousedown", (e) => { entity = cat; ox = e.offsetX; oy = e.offsetY });
+window.addEventListener("mousemove", e => {
+  if (entity != null) {
+    entity.style.left = e.clientX - ox
+    entity.style.top = e.clientY - oy
+  }
+})
+window.addEventListener("mouseup", () => { entity = null });
+</script>
+    
+    </body></html>
