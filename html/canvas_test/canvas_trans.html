@@ -1,0 +1,15 @@
+﻿<body>
+    <canvas id="myCanvas" width="600" height="400"></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+
+        context.fillStyle = "blue";
+
+                context.fillRect(0, 0, 100, 100);
+
+        context.translate(50, 50);
+        context.fillStyle = "red";
+        context.fillRect(0, 0, 100, 100);
+    </script>
+</body>

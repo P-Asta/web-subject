@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+    <canvas id="myCanvas" width="600" height="400"></canvas>
+    <script>
+    let canvas = document.getElementById("myCanvas");
+    let context = canvas.getContext("2d");
+    let image = new Image();
+    image.src = "html5_logo.png";
+    image.onload = function () {
+    context.drawImage(image, 0, 0);
+    };
+    </script>
+    </body>
+    </html>

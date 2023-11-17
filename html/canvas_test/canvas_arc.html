@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+    <canvas id="myCanvas" width="300" height="200"></canvas>
+<script>
+    let canvas = document.getElementById('myCanvas');
+    let context = canvas.getContext('2d');
+
+    for (i = 0; i < 10; i++){
+        context.beginPath();
+        context.arc(100, 100, 10*i, 0, i/10 * Math.PI, false);
+        context.strokeStyle = "green";
+        context.stroke();
+    }
+    </script>
+    </body>
+    </html>

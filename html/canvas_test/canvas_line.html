@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+    <canvas id="myCanvas" width="300" height="200"></canvas>
+    <script>
+        let canvas = document.getElementById('myCanvas');
+        let context = canvas.getContext('2d');
+
+        for (i = 0; i < 10; i++){
+            context.fillStyle = "orange";
+            context.beginPath();
+            context.moveTo(100 + i*10, 25);
+            context.lineTo(30, 100);
+            context.lineTo(150, 100);
+            context.stroke();
+            context.beginPath();
+            context.moveTo(110 + i*10, 25);
+            context.lineTo(40, 100);
+            context.lineTo(250, 100);
+            context.closePath();
+            context.fill();
+        }
+    </script>
+</body>
+
+</html>
