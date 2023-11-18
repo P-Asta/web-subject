@@ -7,10 +7,8 @@
     let canvas = document.getElementById("myCanvas");
     let context = canvas.getContext("2d");
     let image = new Image();
-    image.src = "html5_logo.png";
-    image.onload = function () {
-    context.drawImage(image, 0, 0);
-    };
+    image.src = "html5_logo.png"
+    image.onload = () => context.drawImage(image, 0, 0)
     </script>
     </body>
     </html>
